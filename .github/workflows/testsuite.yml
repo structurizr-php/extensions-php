@@ -46,7 +46,7 @@ jobs:
 
       - name: Install dependecies
         if: matrix.php-versions != '7.3'
-        run: composer update --prefer-lowest
+        run: composer update
 
       - name: Run tests
         run: composer test
