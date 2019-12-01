@@ -1,0 +1,50 @@
+{
+    "name": "struturizr-php/extensions-php",
+    "description": "Structurizr for PHP extensions",
+    "type": "library",
+    "require": {
+        "struturizr-php/structurizr-php": "@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "StructurizrPHP\\": "src/StructurizrPHP/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StructurizrPHP\\Tests\\": "tests/StructurizrPHP/Tests/"
+        }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.15",
+        "phpunit/phpunit": "^8.4",
+        "symfony/var-dumper": "^4.3",
+        "phpstan/phpstan": "^0.11.19",
+        "phpstan/phpstan-phpunit": "^0.11.2",
+        "thecodingmachine/phpstan-strict-rules": "^0.11.2",
+        "localheinz/phpstan-rules": "^0.13.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "norzechowicz",
+            "email": "norbert@orzechowicz.pl"
+        }
+    ],
+    "scripts": {
+        "phpstan": [
+            "phpstan analyse -c phpstan.neon"
+        ],
+        "phpunit": [
+            "phpunit"
+        ],
+        "test" : [
+            "php-cs-fixer fix --dry-run",
+            "@phpstan",
+            "phpunit"
+        ],
+        "cs:fix": [
+            "php-cs-fixer fix"
+        ]
+    }
+}

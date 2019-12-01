@@ -1,0 +1,22 @@
+includes:
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
+    - vendor/thecodingmachine/phpstan-strict-rules/phpstan-strict-rules.neon
+
+rules:
+    - Localheinz\PHPStan\Rules\Expressions\NoEvalRule
+    - Localheinz\PHPStan\Rules\Files\DeclareStrictTypesRule
+
+services:
+    -
+        class: Localheinz\PHPStan\Rules\Classes\FinalRule
+        arguments:
+            allowAbstractClasses: true
+            classesNotRequiredToBeAbstractOrFinal: []
+        tags:
+            - phpstan.rules.rule
+
+parameters:
+    level: 6
+    paths:
+        - src
