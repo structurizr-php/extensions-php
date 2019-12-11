@@ -3,7 +3,7 @@
     "description": "Structurizr for PHP extensions",
     "type": "library",
     "require": {
-        "struturizr-php/structurizr-php": "@dev"
+        "structurizr-php/structurizr-php": "@dev"
     },
     "autoload": {
         "psr-4": {
